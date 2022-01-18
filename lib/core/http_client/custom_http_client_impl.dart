@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:meus_podcats/core/erros/error_messages.dart';
 import 'custom_http_client.dart';
 import 'custom_http_response.dart';
 
@@ -25,6 +26,7 @@ class CustomHttpClientImpl implements CustomHttpClient {
           statusMessage: error.response?.statusMessage);
     } on TimeoutException catch (_) {
       return CustomHttpResponse(
+        statusMessage: ErrorMessages.errorTimeout,
         timeout: true,
       );
     } on SocketException catch (exception) {
