@@ -36,9 +36,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio: ^4.0.4
   equatable: ^2.0.3
-  firebase_core: ^1.11.0
-  firebase_auth: ^3.3.5
-  google_sign_in: ^5.2.3  
+  firebase_core: ^1.13.1
+  firebase_auth: ^3.3.11
+  google_sign_in: ^5.2.3
+  firebase_remote_config: ^2.0.2    
 
 dev_dependencies:
   flutter_test:

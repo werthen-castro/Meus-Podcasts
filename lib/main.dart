@@ -2,10 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:meus_podcats/core/auth_client/auth_client_impl.dart';
 import 'core/auth_client/auth_client.dart';
+import 'core/remote_config/custom_remote_config_impl.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await CustomRemoteConfigImpl().init();
   runApp(const MyApp());
 }
 
