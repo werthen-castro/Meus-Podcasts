@@ -21,9 +21,7 @@ class CustomHttpClientImpl implements CustomHttpClient {
     try {
       response = await _dio.get(url);
     } on DioError catch (error) {
-      return CustomHttpResponse(
-          statusCode: error.response?.statusCode,
-          statusMessage: error.response?.statusMessage);
+      return CustomHttpResponse(statusCode: error.response?.statusCode, statusMessage: error.response?.statusMessage);
     } on TimeoutException catch (_) {
       return CustomHttpResponse(
         statusMessage: ErrorMessages.errorTimeout,

@@ -9,11 +9,9 @@ class AuthClientImpl implements AuthClient {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   @override
-  Future<AuthResponse> signInWithEmailAndPassword(
-      {required String email, required String password}) async {
+  Future<AuthResponse> signInWithEmailAndPassword({required String email, required String password}) async {
     try {
-      UserCredential user = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
+      UserCredential user = await _auth.signInWithEmailAndPassword(email: email, password: password);
 
       return AuthResponse(data: user.user, sucess: true);
     } on FirebaseAuthException catch (e) {
@@ -25,11 +23,9 @@ class AuthClientImpl implements AuthClient {
   }
 
   @override
-  Future<AuthResponse> createUserWithEmailAndPassword(
-      {required String email, required String password}) async {
+  Future<AuthResponse> createUserWithEmailAndPassword({required String email, required String password}) async {
     try {
-      UserCredential user = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      UserCredential user = await _auth.createUserWithEmailAndPassword(email: email, password: password);
 
       return AuthResponse(data: user.user, sucess: true);
     } on FirebaseAuthException catch (e) {
@@ -40,10 +36,8 @@ class AuthClientImpl implements AuthClient {
   @override
   Future<AuthResponse> signInwithGoogle() async {
     try {
-      final GoogleSignInAccount? googleSignInAccount =
-          await _googleSignIn.signIn();
-      final GoogleSignInAuthentication googleSignInAuthentication =
-          await googleSignInAccount!.authentication;
+      final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount!.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleSignInAuthentication.accessToken,
         idToken: googleSignInAuthentication.idToken,

@@ -6,8 +6,7 @@ class CustomRemoteConfigImpl implements CustomRemoteConfig {
   late FirebaseRemoteConfig _firebaseRemoteConfig;
 
   CustomRemoteConfigImpl._internal();
-  static final CustomRemoteConfigImpl _customRemoteConfig =
-      CustomRemoteConfigImpl._internal();
+  static final CustomRemoteConfigImpl _customRemoteConfig = CustomRemoteConfigImpl._internal();
   factory CustomRemoteConfigImpl() => _customRemoteConfig;
 
   Future<void> init() async {

@@ -4,6 +4,10 @@ class CustomHttpResponse {
   final String? statusMessage;
   final bool timeout;
 
-  CustomHttpResponse(
-      {this.data, this.statusCode, this.statusMessage, this.timeout = false});
+  CustomHttpResponse({
+    this.data,
+    this.statusCode,
+    this.statusMessage,
+    this.timeout = false,
+  });
 }
